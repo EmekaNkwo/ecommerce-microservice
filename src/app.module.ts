@@ -9,6 +9,7 @@ import { UsersModule } from './users/users.module';
 import { CacheConfigModule } from './cache/cache.module';
 import { LoggerModule } from './logger/logger.module';
 import { SeedCommand } from './commands/seed.command';
+import { LifecycleProvider } from './core/lifecycle/lifecycle.provider';
 
 @Module({
   imports: [
@@ -21,6 +22,6 @@ import { SeedCommand } from './commands/seed.command';
     LoggerModule,
   ],
   controllers: [AppController],
-  providers: [AppService, SeedCommand],
+  providers: [AppService, SeedCommand, LifecycleProvider],
 })
 export class AppModule {}
